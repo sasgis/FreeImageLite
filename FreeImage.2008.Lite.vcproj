@@ -151,7 +151,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="$(OutDir)\..\libpng16.lib $(OutDir)\..\zlib.lib"
+				AdditionalDependencies="$(OutDir)\..\libpng16.lib $(OutDir)\..\zlib.lib $(OutDir)\..\webp.lib $(OutDir)\..\webpmux.lib"
 				OutputFile="$(OutDir)/FreeImage.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -368,6 +368,10 @@
 				</File>
 				<File
 					RelativePath="Source\FreeImage\PluginPNG.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\Source\FreeImage\PluginWebP.cpp"
 					>
 				</File>
 			</Filter>

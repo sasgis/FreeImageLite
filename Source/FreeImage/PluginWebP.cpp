@@ -336,7 +336,7 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 	WebPMuxFrameInfo webp_frame = { 0 };	// raw image
 	WebPData color_profile;	// ICC raw data
 	WebPData xmp_metadata;	// XMP raw data
-	WebPData exif_metadata;	// EXIF raw data
+	//WebPData exif_metadata;	// EXIF raw data
 	FIBITMAP *dib = NULL;
 	WebPMuxError error_status;
 
@@ -397,7 +397,7 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 					}
 				}
 			}
-
+			/*
 			// get Exif metadata
 			if(webp_flags & EXIF_FLAG) {
 				error_status = WebPMuxGetChunk(mux, "EXIF", &exif_metadata);
@@ -408,6 +408,7 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 					jpeg_read_exif_profile(dib, exif_metadata.bytes, (unsigned)exif_metadata.size);
 				}
 			}
+			*/
 		}
 
 		WebPDataClear(&webp_frame.bitstream);

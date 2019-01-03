@@ -408,7 +408,7 @@ FI_ENUM(FREE_IMAGE_FORMAT) {
 	//FIF_XBM		= 22,
 	//FIF_XPM		= 23,
 	//FIF_DDS		= 24,
-	FIF_GIF     = 3
+	FIF_GIF     = 3,
 	//FIF_HDR		= 26,
 	//FIF_FAXG3	= 27,
 	//FIF_SGI		= 28,
@@ -418,7 +418,7 @@ FI_ENUM(FREE_IMAGE_FORMAT) {
 	//FIF_PFM		= 32,
 	//FIF_PICT	= 33,
 	//FIF_RAW		= 34,
-	//FIF_WEBP	= 35,
+	FIF_WEBP	= 4
 	//FIF_JXR		= 36
 };
 
