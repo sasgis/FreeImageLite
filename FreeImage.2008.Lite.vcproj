@@ -359,6 +359,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Source\FreeImage\PluginFAKE.cpp"
+					>
+				</File>
+				<File
 					RelativePath="Source\FreeImage\PluginGIF.cpp"
 					>
 				</File>
