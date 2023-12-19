@@ -151,8 +151,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="$(OutDir)\..\libpng16.lib $(OutDir)\..\zlib.lib $(OutDir)\..\webp.lib $(OutDir)\..\webpmux.lib"
-				OutputFile="$(OutDir)/FreeImage.dll"
+				AdditionalDependencies="$(OutDir)\..\libpng16.lib $(OutDir)\..\zlib.lib $(OutDir)\..\libwebp.lib $(OutDir)\..\libwebpmux.lib $(OutDir)\..\tiff.lib"
+				OutputFile="$(OutDir)/libfreeimage-3.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="false"
@@ -161,7 +161,7 @@
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/FreeImage.lib"
+				ImportLibrary="$(OutDir)/libfreeimage-3.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -224,11 +224,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Source\OpenEXR\Half\half.cpp"
+				>
+			</File>
+			<File
 				RelativePath="Source\FreeImage\MemoryIO.cpp"
 				>
 			</File>
 			<File
 				RelativePath="Source\FreeImage\PixelAccess.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Source\FreeImage\TIFFLogLuv.cpp"
 				>
 			</File>
 			<Filter
@@ -375,6 +383,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Source\FreeImage\PluginTIFF.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\Source\FreeImage\PluginWebP.cpp"
 					>
 				</File>
@@ -419,6 +431,10 @@
 			</File>
 			<File
 				RelativePath="Source\Metadata\FreeImageTag.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Source\OpenEXR\Half\half.h"
 				>
 			</File>
 			<File

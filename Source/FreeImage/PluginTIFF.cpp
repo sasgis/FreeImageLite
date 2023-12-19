@@ -42,20 +42,20 @@
 #include "../OpenEXR/Half/half.h"
 
 #include "FreeImageIO.h"
-#include "PSDParser.h"
+//#include "PSDParser.h"
 
 // --------------------------------------------------------------------------
 // GeoTIFF profile (see XTIFF.cpp)
 // --------------------------------------------------------------------------
-void XTIFFInitialize();
-BOOL tiff_read_geotiff_profile(TIFF *tif, FIBITMAP *dib);
-BOOL tiff_write_geotiff_profile(TIFF *tif, FIBITMAP *dib);
+//void XTIFFInitialize();
+//BOOL tiff_read_geotiff_profile(TIFF *tif, FIBITMAP *dib);
+//BOOL tiff_write_geotiff_profile(TIFF *tif, FIBITMAP *dib);
 
 // --------------------------------------------------------------------------
 // TIFF Exif profile (see XTIFF.cpp)
 // ----------------------------------------------------------
-BOOL tiff_read_exif_tags(TIFF *tif, TagLib::MDMODEL md_model, FIBITMAP *dib);
-BOOL tiff_write_exif_tags(TIFF *tif, TagLib::MDMODEL md_model, FIBITMAP *dib);
+//BOOL tiff_read_exif_tags(TIFF *tif, TagLib::MDMODEL md_model, FIBITMAP *dib);
+//BOOL tiff_write_exif_tags(TIFF *tif, TagLib::MDMODEL md_model, FIBITMAP *dib);
 
 // --------------------------------------------------------------------------
 //   LogLuv conversion functions interface (see TIFFLogLuv.cpp)
@@ -759,6 +759,7 @@ WriteCompression(TIFF *tiff, uint16 bitspersample, uint16 samplesperpixel, uint1
 /**
 	Read the TIFFTAG_RICHTIFFIPTC tag (IPTC/NAA or Adobe Photoshop profile)
 */
+/*
 static BOOL 
 tiff_read_iptc_profile(TIFF *tiff, FIBITMAP *dib) {
 	BYTE *profile = NULL;
@@ -774,13 +775,14 @@ tiff_read_iptc_profile(TIFF *tiff, FIBITMAP *dib) {
 
 	return FALSE;
 }
-
+*/
 /**
 	Read the TIFFTAG_XMLPACKET tag (XMP profile)
 	@param dib Input FIBITMAP
 	@param tiff LibTIFF TIFF handle
 	@return Returns TRUE if successful, FALSE otherwise
 */
+/*
 static BOOL  
 tiff_read_xmp_profile(TIFF *tiff, FIBITMAP *dib) {
 	BYTE *profile = NULL;
@@ -809,13 +811,14 @@ tiff_read_xmp_profile(TIFF *tiff, FIBITMAP *dib) {
 
 	return FALSE;
 }
-
+*/
 /**
 	Read the Exif profile embedded in a TIFF
 	@param dib Input FIBITMAP
 	@param tiff LibTIFF TIFF handle
 	@return Returns TRUE if successful, FALSE otherwise
 */
+/*
 static BOOL 
 tiff_read_exif_profile(FreeImageIO *io, fi_handle handle, TIFF *tiff, FIBITMAP *dib) {
 	BOOL bResult = FALSE;
@@ -842,7 +845,7 @@ tiff_read_exif_profile(FreeImageIO *io, fi_handle handle, TIFF *tiff, FIBITMAP *
 
 	return bResult;
 }
-
+*/
 /**
 Read TIFF special profiles
 */
@@ -850,16 +853,16 @@ static void
 ReadMetadata(FreeImageIO *io, fi_handle handle, TIFF *tiff, FIBITMAP *dib) {
 
 	// IPTC/NAA
-	tiff_read_iptc_profile(tiff, dib);
+	//tiff_read_iptc_profile(tiff, dib);
 
 	// Adobe XMP
-	tiff_read_xmp_profile(tiff, dib);
+	//tiff_read_xmp_profile(tiff, dib);
 
 	// GeoTIFF
-	tiff_read_geotiff_profile(tiff, dib);
+	//tiff_read_geotiff_profile(tiff, dib);
 
 	// Exif-TIFF
-	tiff_read_exif_profile(io, handle, tiff, dib);
+	//tiff_read_exif_profile(io, handle, tiff, dib);
 }
 
 // ----------------------------------------------------------
@@ -867,6 +870,7 @@ ReadMetadata(FreeImageIO *io, fi_handle handle, TIFF *tiff, FIBITMAP *dib) {
 /**
 	Write the TIFFTAG_RICHTIFFIPTC tag (IPTC/NAA or Adobe Photoshop profile)
 */
+/*
 static BOOL 
 tiff_write_iptc_profile(TIFF *tiff, FIBITMAP *dib) {
 	if(FreeImage_GetMetadataCount(FIMD_IPTC, dib)) {
@@ -898,13 +902,14 @@ tiff_write_iptc_profile(TIFF *tiff, FIBITMAP *dib) {
 
 	return FALSE;
 }
-
+*/
 /**
 	Write the TIFFTAG_XMLPACKET tag (XMP profile)
 	@param dib Input FIBITMAP
 	@param tiff LibTIFF TIFF handle
 	@return Returns TRUE if successful, FALSE otherwise
 */
+/*
 static BOOL  
 tiff_write_xmp_profile(TIFF *tiff, FIBITMAP *dib) {
 	FITAG *tag_xmp = NULL;
@@ -919,13 +924,14 @@ tiff_write_xmp_profile(TIFF *tiff, FIBITMAP *dib) {
 
 	return FALSE;
 }
-
+*/
 /**
 	Write the Exif profile to TIFF
 	@param dib Input FIBITMAP
 	@param tiff LibTIFF TIFF handle
 	@return Returns TRUE if successful, FALSE otherwise
 */
+/*
 static BOOL
 tiff_write_exif_profile(TIFF *tiff, FIBITMAP *dib) {
 	BOOL bResult = FALSE;
@@ -935,23 +941,23 @@ tiff_write_exif_profile(TIFF *tiff, FIBITMAP *dib) {
 
 	return bResult;
 }
-
+*/
 /**
 Write TIFF special profiles
 */
 static void 
 WriteMetadata(TIFF *tiff, FIBITMAP *dib) {
 	// IPTC
-	tiff_write_iptc_profile(tiff, dib);
+	//tiff_write_iptc_profile(tiff, dib);
 	
 	// Adobe XMP
-	tiff_write_xmp_profile(tiff, dib);
+	//tiff_write_xmp_profile(tiff, dib);
 	
 	// EXIF_MAIN tags
-	tiff_write_exif_profile(tiff, dib);
+	//tiff_write_exif_profile(tiff, dib);
 	
 	// GeoTIFF tags
-	tiff_write_geotiff_profile(tiff, dib);
+	//tiff_write_geotiff_profile(tiff, dib);
 }
 
 // ==========================================================
@@ -1298,26 +1304,26 @@ ReadThumbnail(FreeImageIO *io, fi_handle handle, void *data, TIFF *tiff, FIBITMA
 	}
 	
 	// ... or read Photoshop thumbnail
-	
-	if(!thumbnail) {
-		uint32 ps_size = 0;
-		void *ps_data = NULL;
-		
-		if(TIFFGetField(tiff, TIFFTAG_PHOTOSHOP, &ps_size, &ps_data)) {
-			FIMEMORY *handle = FreeImage_OpenMemory((BYTE*)ps_data, ps_size);
-			
-			FreeImageIO io;
-			SetMemoryIO(&io);
-			
-			psdParser parser;
-			parser.ReadImageResources(&io, handle, ps_size);
 
-			FreeImage_SetThumbnail(dib, parser.GetThumbnail());
-			
-			FreeImage_CloseMemory(handle);
-		}
-	}
-	
+	//if(!thumbnail) {
+	//	uint32 ps_size = 0;
+	//	void *ps_data = NULL;
+	//	
+	//	if(TIFFGetField(tiff, TIFFTAG_PHOTOSHOP, &ps_size, &ps_data)) {
+	//		FIMEMORY *handle = FreeImage_OpenMemory((BYTE*)ps_data, ps_size);
+	//		
+	//		FreeImageIO io;
+	//		SetMemoryIO(&io);
+	//		
+	//		psdParser parser;
+	//		parser.ReadImageResources(&io, handle, ps_size);
+
+	//		FreeImage_SetThumbnail(dib, parser.GetThumbnail());
+	//		
+	//		FreeImage_CloseMemory(handle);
+	//	}
+	//}
+
 	// release thumbnail
 	FreeImage_Unload(thumbnail);
 }
@@ -2654,7 +2660,7 @@ InitTIFF(Plugin *plugin, int format_id) {
 
     // Set up the callback for extended TIFF directory tag support (see XTIFF.cpp)
 	// Must be called before using libtiff
-    XTIFFInitialize();	
+    //XTIFFInitialize();	
 
 	plugin->format_proc = Format;
 	plugin->description_proc = Description;
