@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libfreeimage-3" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc-msys2-mingw32" />
+		<Build>
+			<Target title="Release">
+				<Option output="Dist/bin/Release/libfreeimage-3" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Dist/obj/Release/" />
+				<Option type="3" />
+				<Option compiler="gcc-msys2-mingw32" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-flto" />
+					<Add option="-O" />
+					<Add option="-fPIC" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+					<Add option="-s" />
+					<Add library="user32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-DFREEIMAGE_EXPORTS" />
+			<Add directory="Source" />
+		</Compiler>
+		<Linker>
+			<Add library="libpng16" />
+			<Add library="libtiff" />
+			<Add library="libwebp" />
+			<Add library="libwebpmux" />
+			<Add library="libz" />
+		</Linker>
+		<Unit filename="Source/CacheFile.h" />
+		<Unit filename="Source/FreeImage.h" />
+		<Unit filename="Source/FreeImageIO.h" />
+		<Unit filename="Source/FreeImageToolkit/BSplineRotate.cpp" />
+		<Unit filename="Source/FreeImageToolkit/Background.cpp" />
+		<Unit filename="Source/FreeImageToolkit/Channels.cpp" />
+		<Unit filename="Source/FreeImageToolkit/ClassicRotate.cpp" />
+		<Unit filename="Source/FreeImageToolkit/Colors.cpp" />
+		<Unit filename="Source/FreeImageToolkit/CopyPaste.cpp" />
+		<Unit filename="Source/FreeImageToolkit/Display.cpp" />
+		<Unit filename="Source/FreeImageToolkit/Flip.cpp" />
+		<Unit filename="Source/FreeImageToolkit/MultigridPoissonSolver.cpp" />
+		<Unit filename="Source/FreeImageToolkit/Rescale.cpp" />
+		<Unit filename="Source/FreeImageToolkit/Resize.cpp" />
+		<Unit filename="Source/FreeImage/BitmapAccess.cpp" />
+		<Unit filename="Source/FreeImage/CacheFile.cpp" />
+		<Unit filename="Source/FreeImage/ColorLookup.cpp" />
+		<Unit filename="Source/FreeImage/Conversion.cpp" />
+		<Unit filename="Source/FreeImage/Conversion16_555.cpp" />
+		<Unit filename="Source/FreeImage/Conversion16_565.cpp" />
+		<Unit filename="Source/FreeImage/Conversion24.cpp" />
+		<Unit filename="Source/FreeImage/Conversion32.cpp" />
+		<Unit filename="Source/FreeImage/Conversion4.cpp" />
+		<Unit filename="Source/FreeImage/Conversion8.cpp" />
+		<Unit filename="Source/FreeImage/ConversionFloat.cpp" />
+		<Unit filename="Source/FreeImage/ConversionRGB16.cpp" />
+		<Unit filename="Source/FreeImage/ConversionRGBA16.cpp" />
+		<Unit filename="Source/FreeImage/ConversionRGBAF.cpp" />
+		<Unit filename="Source/FreeImage/ConversionRGBF.cpp" />
+		<Unit filename="Source/FreeImage/ConversionType.cpp" />
+		<Unit filename="Source/FreeImage/ConversionUINT16.cpp" />
+		<Unit filename="Source/FreeImage/FreeImage.cpp" />
+		<Unit filename="Source/FreeImage/FreeImageC.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Source/FreeImage/FreeImageIO.cpp" />
+		<Unit filename="Source/FreeImage/GetType.cpp" />
+		<Unit filename="Source/FreeImage/Halftoning.cpp" />
+		<Unit filename="Source/FreeImage/LFPQuantizer.cpp" />
+		<Unit filename="Source/FreeImage/MemoryIO.cpp" />
+		<Unit filename="Source/FreeImage/MultiPage.cpp" />
+		<Unit filename="Source/FreeImage/NNQuantizer.cpp" />
+		<Unit filename="Source/FreeImage/PixelAccess.cpp" />
+		<Unit filename="Source/FreeImage/Plugin.cpp" />
+		<Unit filename="Source/FreeImage/PluginBMP.cpp" />
+		<Unit filename="Source/FreeImage/PluginFAKE.cpp" />
+		<Unit filename="Source/FreeImage/PluginGIF.cpp" />
+		<Unit filename="Source/FreeImage/PluginICO.cpp" />
+		<Unit filename="Source/FreeImage/PluginPNG.cpp" />
+		<Unit filename="Source/FreeImage/PluginTIFF.cpp" />
+		<Unit filename="Source/FreeImage/PluginWebP.cpp" />
+		<Unit filename="Source/FreeImage/TIFFLogLuv.cpp" />
+		<Unit filename="Source/FreeImage/ToneMapping.cpp" />
+		<Unit filename="Source/FreeImage/WuQuantizer.cpp" />
+		<Unit filename="Source/FreeImage/ZLibInterface.cpp" />
+		<Unit filename="Source/FreeImage/tmoColorConvert.cpp" />
+		<Unit filename="Source/FreeImage/tmoDrago03.cpp" />
+		<Unit filename="Source/FreeImage/tmoFattal02.cpp" />
+		<Unit filename="Source/FreeImage/tmoReinhard05.cpp" />
+		<Unit filename="Source/Metadata/FIRational.cpp" />
+		<Unit filename="Source/Metadata/FreeImageTag.cpp" />
+		<Unit filename="Source/Metadata/TagConversion.cpp" />
+		<Unit filename="Source/Metadata/TagLib.cpp" />
+		<Unit filename="Source/OpenEXR/Half/half.cpp" />
+		<Unit filename="Source/Plugin.h" />
+		<Unit filename="Source/Quantizers.h" />
+		<Unit filename="Source/ToneMapping.h" />
+		<Unit filename="Source/Utilities.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
