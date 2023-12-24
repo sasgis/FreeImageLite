@@ -1,0 +1,6 @@
+/Dist/*
+*.vcproj.*
+*.suo
+*.ncb
+*.depend
+*.layout
