@@ -152,7 +152,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(OutDir)\..\libpng16.lib $(OutDir)\..\zlib.lib $(OutDir)\..\libwebp.lib $(OutDir)\..\libwebpmux.lib $(OutDir)\..\tiff.lib"
-				OutputFile="$(OutDir)/libfreeimage-3.dll"
+				OutputFile="$(OutDir)/FreeImage.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="false"
@@ -161,7 +161,7 @@
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/libfreeimage-3.lib"
+				ImportLibrary="$(OutDir)/FreeImage.lib"
 				TargetMachine="1"
 			/>
 			<Tool
